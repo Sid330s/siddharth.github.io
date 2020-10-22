@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<style>
+div {
+
+  font-family:monospace;
+}
+.nav-tabs { border-bottom: 2px solid #DDD; }
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
+.nav-tabs > li > a { border: none; color: #666; }
+.nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none; color: #4285F4 !important; background: transparent; }
+.nav-tabs > li > a::after { content: ""; background: #4285F4; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+.nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
+.tab-nav > li > a::after { background: #21527d none repeat scroll 0% 0%; color: #fff; }
+.tab-pane { padding: 15px 0; }
+.tab-content{padding:20px}
+.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+</style>
+<div class="container">
+  <h1 ><b>Siddharth Kale</b></h1>
+  <p>Avid Learner, Sports Programmer</p>
+
+<ul class="nav nav-tabs" id="myTab">
+    <li class="active"><a href="#Tab1">Home</a></li>
+    <li><a href="#Tab2">Experience</a></li>
+    <li><a href="#Tab3">Competitive Coding</a></li>
+    <li><a href="#Tab4">Projects</a></li>
+    <li><a href="#Tab5">Skills</a></li>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane active"  id="Tab1">
+      <h1>Siddharth Kale</h1>
+         <h2>3rd Year VIT PUNE</h2>
+         <h3>CGPA - 9.2</h3>
+         <img class="myimg" src="download.png" style="width:414px;height:276px;"></img>
+    </div>
+    <div id="Tab2"  class="tab-pane">
+      <h2>Experience</h2>
+         <ul>
+         <li>
+            <div>
+            <h3>IEEE HAC, Funded - Project, pune — Software Engineer</h3>
+            <p> Blockchain based solution will manage all equipment procurement journeys right from manufacturer, certifier, distributor and medical service provider with efficient technology solution.</p>
+          </div>
+         </li>
+         <li>
+            <div>
+            <h3>Param Solutions, Pune — Technology Intern</h3>
+            <p>Worked on deploying OpenEDX Platform on AWS Cloud - EC2.</p>
+          </div>
+         </li>
+      </ul>
+    </div>
+    <div id="Tab3"  class="tab-pane">
+      <h2>Sports Programming</h2>
+      <ul>
+           <li>
+              <div>
+              <h4>CodeChef Rating - 1935</h4>
+              <p>Consistant Performer</p>
+            </div>
+           </li>
+           <li>
+              <div>
+              <h4>Hackerrank Level - 6 star</h4>
+              <p>Solved A lot Of problems on Hackerrank</p>
+            </div>
+           </li>
+           <li>
+              <div>
+              <h4>Codechef February Challenge - Global Rank 106</h4>
+              <p>Participating World wide Comprtitions</p>
+            </div>
+           </li>
+           <li>
+              <div>
+              <h4>Codechef February CookOFF - Global Rank 101</h4>
+              <p>Participating World wide Comprtitions</p>
+            </div>
+           </li>
+           <li>
+              <div>
+              <h4>Qualified Qualification Round For Google Code Jam</h4>
+              <p>Participating World wide Comprtitions</p>
+            </div>
+           </li>
+        </ul>
+    </div>
+    <div id="Tab4"  class="tab-pane">
+      <h2>Projects</h2>
+      <ul>
+         <li>
+            <div>
+            <h3>Two player Chess Game — Low Level Design</h3>
+            <p>Tried to build a game from Scratch. Object Oriented Programming and Clean Code Concepts Learnt. Guide: Prof. Sangita Lade</p>
+          </div>
+         </li>
+         <li>
+            <div>
+            <h3>Attendance APP — Android APP</h3>
+            <p>Tried to build an Android Application in Android Studio. Used Java, Google Api’s, Firestore as a database. Guide: Prof Ashwini Shingare</p>
+          </div>
+         </li>
+         <li>
+            <div>
+            <h3>Bloom Filters   —  Implementation</h3>
+            <p>Implementation of Bloom Filters in Python.  Guide: Prof. Sneha Pisey</p>
+          </div>
+         </li>
+      </ul>
+    </div>
+    <div id="Tab5"  class="tab-pane">
+      <h2>Skils</h2>
+      <ul>
+         <li>
+            <div>
+            <h4>Problem Solving</h4>
+          </div>
+         </li>
+         <li>
+            <div>
+            <h4>Leadership</h4>
+          </div>
+         </li>
+         <li>
+            <div>
+            <h4>Communication</h4>
+          </div>
+         </li>
+         <li>
+            <div>
+            <h4>Presentation</h4>
+          </div>
+         </li>
+         <li>
+            <div>
+               <h4>Management</h4>
+             </div>
+         </li>
+      </ul>
+    </div>
+</div>
+<script>
+var tabChange = function () {
+    var tabs = $('.nav-tabs > li');
+    var active = tabs.filter('.active');
+    var next = active.next('li').length ? active.next('li').find('a') : tabs.filter(':first-child').find('a');
+    // Use the Bootsrap tab show method
+    next.tab('show');
+};
+// Tab Cycle function
+var tabCycle = setInterval(tabChange, 1500);
+
+// Tab click event handler
+$('a').on('click', function (e) {
+    e.preventDefault();
+    // Stop the cycle
+    clearInterval(tabCycle);
+    // Show the clicked tabs associated tab-pane
+    $(this).tab('show');
+    // Start the cycle again in a predefined amount of time
+    setTimeout(function () {
+        tabCycle = setInterval(tabChange, 5000);
+    }, 1000);
+});
+
+var left = $('#coolDiv').offset().left;  // Get the calculated left position
+
+$("#coolDiv").css({left:left})  // Set the left to its calculated position
+             .animate({"left":"0px"}, "slow");
+
+</script>
+</body>
+</html>
