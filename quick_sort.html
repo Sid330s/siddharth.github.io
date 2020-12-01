@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Bubble Sort Visualization</title>
+
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.min.js"></script>
+
+	<script>
+
+	let values = [];
+	let w = 20;
+
+	let states = [];
+
+	function setup() {
+		createCanvas(800, 400);
+		values = new Array(floor(width / w));
+		for (let i = 0; i < values.length; i++) {
+			values[i] = random(height-20);
+			states[i] = -1;
+		}
+
+		quickSort(values, 0, values.length - 1);
+	}
+
+	async function quickSort(arr, start, end) {
+		if (start >= end) {
+			return;
+		}
+		let index = await partition(arr, start, end);
+		states[index] = -1;
+
+		await Promise.all([
+			quickSort(arr, start, index - 1),
+			quickSort(arr, index + 1, end)
+		]);
+	}
+
+	async function partition(arr, start, end) {
+		for (let i = start; i < end; i++) {
+			states[i] = 1;
+		}
+
+		let pivotValue = arr[end];
+		let pivotIndex = start;
+		states[pivotIndex] = 0;
+		for (let i = start; i < end; i++) {
+			if (arr[i] < pivotValue) {
+				await swap(arr, i, pivotIndex);
+				states[pivotIndex] = -1;
+				pivotIndex++;
+				states[pivotIndex] = 0;
+			}
+		}
+		await swap(arr, pivotIndex, end);
+
+		for (let i = start; i < end; i++) {
+			if (i != pivotIndex) {
+				states[i] = -1;
+			}
+		}
+
+		return pivotIndex;
+	}
+
+	function draw() {
+		background(51);
+
+		for (let i = 0; i < values.length; i++) {
+			stroke(0);
+			fill(255);
+			if (states[i] == 0) {
+				fill(255, 0, 0);
+			} else if (states[i] == 1) {
+				fill("#58FA82");
+			} else {
+				fill(255);
+			}
+			rect(i * w, height - values[i], w, values[i]);
+			text(floor(values[i]), i*w, height - values[i]-1);
+		}
+	}
+
+	async function swap(arr, a, b) {
+		await sleep(50);
+		let temp = arr[a];
+		arr[a] = arr[b];
+		arr[b] = temp;
+	}
+
+	function sleep(ms) {
+		return new Promise(resolve => setTimeout(resolve, ms));
+	}
+
+
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
