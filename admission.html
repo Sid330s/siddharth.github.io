@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Student Registration</title>
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+  <div class="head">
+    <img src="vit.png" alt="vit-pune logo">
+  <h1>Student Registration Form </h1>
+  <div class="photo">
+    <form action="index.html" method="post">
+      <p>Passport Photograph</p>
+      <p>Upload photo here...</p>
+      <input type="file" name="photo">
+    </form>
+  </div>
+</div>
+
+  <hr>
+  <form class="" action="mailto:info@support.com" method="post">
+    <label for="fname">First Name : </label>
+    <input type="text" name="fname" value="" size="50"><br><br>
+    <label for="mname">Middle Name : </label>
+    <input type="text" name="fname" value="" size="50"><br><br>
+    <label for="lname">Last Name : </label>
+    <input type="text" name="fname" value="" size="50"><br><br>
+    <label for="course">Branch : </label>
+
+    <select name="Branch">
+      <option value="computer">Computer/IT</option>
+      <option value="computer">E&TC</option>
+      <option value="computer">Mechanical</option>
+      <option value="computer">Indus/Prod</option>
+    </select><br><br>
+
+    <label for="gender">Gender :</label>
+    <input type="radio" name="gender" value="male">
+    <label for="male">Male</label>
+    <input type="radio" name="gender" value="female">
+    <label for="female">Female</label>
+    <input type="radio" name="gender" value="other">
+    <label for="other">Other</label><br><br>
+
+    <label for="phn">Phone Number : </label>
+    <input type="text" name="Country Code" value="+91" size=2>
+    <input type="tel" name="Phone number" size="10" pattern="^\d{10}$" required>
+    <label for="">(10 digits only)</label><br><br>
+
+    <label for="email">Email : </label>
+    <input type="email" name="" value=""><br><br>
+
+    <label for="address">Address: </label><br>
+    <textarea name="name" rows="8" cols="50"></textarea><br><br>
+
+    <label for="pass">Create Password : </label>
+    <input type="password" name="password" value=""><br><br>
+    <label for="re-pass">Re-enter Password : </label>
+    <input type="password" name="password" value=""><br><br>
+
+    <button type="submit" class="register" name="Submit">Register</button>
+    <input type="reset" name="Reset">
+
+
+
+  </form>
+
+</body>
+
+</html>
